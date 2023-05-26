@@ -32,7 +32,7 @@
 
 // *3 Constructor
 function Circle2(radius){
-    console.log(this)
+    // console.log(this)
     this.radius2 = radius;
     this.draw2 = function(){
         console.log("draw2")
@@ -49,7 +49,24 @@ console.log(circle_object.constructor)
 // console.log(circle.constructor)
 
 // works same as line 42 with empty object instance
-Circle2.call({},5)
+// Circle2.call({},5)
 
 // works same as line 42 with parameter can be passd in an array
-Circle2.apply({},[1])
+// Circle2.apply({},[1])
+
+// adding new properties on the go
+// method 1
+circle_object.location ={x:10};
+// method 2
+circle_object["start point"] = {x:0,y:0}
+
+console.log(circle_object.location)
+console.log(circle_object.constructor)
+
+// * fetching properties of object 
+for (let keys1 in Circle2){
+    console.log(keys1)
+    if(typeof keys1 == 'function'){
+        console.log(keys1)
+    }
+}
