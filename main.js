@@ -60,13 +60,23 @@ circle_object.location ={x:10};
 // method 2
 circle_object["start point"] = {x:0,y:0}
 
-console.log(circle_object.location)
-console.log(circle_object.constructor)
+console.log(circle_object)
+// console.log(circle_object.constructor)
 
 // * fetching properties of object 
-for (let keys1 in Circle2){
-    console.log(keys1)
-    if(typeof keys1 == 'function'){
-        console.log(keys1)
+// method1
+for (let keys1 in circle_object){
+    console.log(keys1,circle_object[keys1])
+    if(typeof circle_object[keys1] !== 'function'){
+        console.log(keys1, "all properties except function")
     }
+}
+
+// method 2
+const keys2 = Object.keys(circle_object)
+console.log(keys2)
+
+// checking the propertis if exist
+if('radius2' in circle_object){
+    console.log("radius is a property of circle")
 }
